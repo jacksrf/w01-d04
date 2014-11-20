@@ -1,0 +1,34 @@
+<html>
+<body>
+	<canvas id="the_canvas" width="1000" height="1000"></canvas>
+	<script>
+		var num = prompt("how many squares?");
+		var color = ["#c4120c", "rgba(100,200,50,1)", "blue"];
+		var z = 0;
+  		
+  		if (isNaN(num)) {
+			console.log("Give me actual digits");
+		} else {
+
+			for (i=0 ; i < num; i++){
+				var x = Math.floor(Math.random()*(400 -1) +1);
+				var y = Math.floor(Math.random()*(400 -1) +1);
+
+				if (z === 3) {
+					z = 0;
+				} 
+
+				var acolor = color[z];
+
+				var canvas = document.getElementById("the_canvas");
+  				var ctx = canvas.getContext('2d');
+
+  				ctx.fillStyle = (acolor);
+  				ctx.fillRect ( x , y ,50,50);
+  				z++;
+			}
+		}
+
+	</script>
+</body>
+</html>
